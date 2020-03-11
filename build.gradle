@@ -19,7 +19,6 @@ repositories {
 	mavenCentral()
 }
 
-
 dependencies {
 	implementation 'org.springframework.boot:spring-boot-starter'
 	testImplementation('org.springframework.boot:spring-boot-starter-test') {
@@ -31,6 +30,10 @@ dependencies {
 	compile('org.springframework.boot:spring-boot-starter-web')
 	compile('org.springframework.boot:spring-boot-starter-thymeleaf')
 	compile group: 'org.postgresql', name: 'postgresql', version: '42.2.5'
+	compileOnly 'org.projectlombok:lombok:1.18.12'
+	annotationProcessor 'org.projectlombok:lombok:1.18.12'
+	testCompileOnly 'org.projectlombok:lombok:1.18.12'
+	testAnnotationProcessor 'org.projectlombok:lombok:1.18.12'
 
 }
 
