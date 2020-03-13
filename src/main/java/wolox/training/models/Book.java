@@ -6,56 +6,48 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.SequenceGenerator;
+import javax.validation.constraints.NotNull;
+import lombok.Data;
 import lombok.Getter;
 import lombok.Setter;
 
 @Entity
+@Data
 @SequenceGenerator(name="BookSequence")
 public class Book {
 
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "BookSequence")
-    @Getter
     private long id;
 
-    @Getter @Setter
-    @Column(nullable = false)
     private String title;
 
-    @Getter @Setter
-    @Column(nullable = false)
+    @NotNull
     private String author;
 
-    @Getter @Setter
-    @Column
     private String genre;
 
-    @Getter @Setter
     @Column(nullable = false)
     private String subtitle;
 
-    @Getter @Setter
     @Column(nullable = false)
     private String publisher;
 
-    @Getter @Setter
     @Column(nullable = false)
     private String year;
 
-    @Getter @Setter
     @Column(nullable = false)
     private int pages;
 
-    @Getter @Setter
     @Column(nullable = false)
     private String image;
 
-    @Getter @Setter
     @Column(nullable = false)
     private String isbn;
 
     public Book() {
 
     }
+
 }
 
